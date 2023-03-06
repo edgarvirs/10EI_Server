@@ -25,6 +25,15 @@ def root():
 @app.route('/tests')
 def health():
   return render_template("tests.html")
+
+@app.route('/gadalaiks')
+def gadalaiks():
+  return render_template("gadalaiks.html")
+
+@app.route('/gadalaiki/<menesis>')
+def gadalaiki(menesis):
+    return render_template("menesis.html",menesis=menesis)
 #----------------------------------------------------   
 if __name__ == '__main__':
   app.run(debug=True,port=5000) # ,host='10.1.15.xx' host='0.0.0.0' - datora IP adrese
+
